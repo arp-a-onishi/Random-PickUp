@@ -1,40 +1,46 @@
 import { createStitches } from '@stitches/react';
+import { text } from 'stream/consumers';
 
-export const { config, createTheme, css, getCssText, globalCss, styled, theme, keyframes } = createStitches({
+export const { styled, css, globalCss, keyframes, getCssText, theme } = createStitches({
   theme: {
     colors: {
-      //---旧コーポレイトサイト---
-      //FIXME:不必要なcolorは改修後削除&コメント削除
-      accent: '#337777',
-      text: '#1F1F1F',
-      extended: '#AAAAAA',
-      line: '#E6E6E6',
-      bgPrimary: '#F6F6F6',
-      bgSecondary: '#FBFDFD',
-      bgTertiary: '#ECF2F2',
-      bgOriginal: '#333333',
-      error: '#BF0000',
-      errorBg: '#FFE8E8',
-      //---新コーポレイトサイト---
-      //-MainColor-
-      asembleOrange: '#ED983B',
-      freshOrange: '#F8B973',
-      pailOrange: '#FEF3E7',
-      burntOrange: '#BE7423',
-      //-SubColor-
-      calmBlue: '#3B5C82',
-      softBlue: '#6D9FD5',
-      //-SystemGray-
-      black: '#1D1D1D',
-      gray1: '#3D3D3D',
-      gray2: '#707070',
-      gray3: '#C8C8C8',
-      gray4: '#EBEBEB',
-      white: '#FFFFFF',
-      //-SemanticColor-
-      red1: '#CF3A3A',
-      red2: '#F36E6E',
-      red3: '#FFD5D5',
+      surface: '#dae1ee',
+      secondary: '#737373',
+      onSurface: '#171926',
+      toggleBtnColor: '#171926',
+      ToggleBtn: '#dfaf3e',
+      TtoggleBtnBg: '#e4e8f0',
+      DefaultBtnColor: '#9a0000',
+      primaryBtnBg: 'linear-gradient(45deg, #b51409 0%, #efae2d 50%, #46b4ab 100%)',
+      secondaryBtnBg: 'linear-gradient(90deg, #efae2d 0%, #d9d9d9 100%)',
+      HintBg: 'linear-gradient(45deg, #b51409 0%, #efae2d 50%, #46b4ab 100%)',
+      textLink: '#9a0000',
+      borderColor: '#dae1ee',
+      border: '2px solid  #dae1ee',
+      boxShadowLg: '4px 4px 0  #dae1ee',
+      boxShadowSm: '2px 2px 0  #dae1ee',
+      boxShadowInset: 'inset 4px 4px 0  #dae1ee',
+      boxShadowInsetSm: 'inset 2px 2px 0  #dae1ee',
+      borderRadiusFull: '625rem',
+      sky: '#00a4fd',
+      blue: '#0d20fc',
+      teal: '#46b4ab',
+      labelGreen: '#3BE5AE',
+    },
+    fontSizes: {
+      textXXS: '0.65rem',
+      textXS: '0.75rem',
+      textSM: '0.875rem',
+      textMD: '1rem',
+      textLG: '1.25rem',
+      textXL: '1.5rem',
+      textXXL: '2rem',
+    },
+
+    fontWeights: {
+      bold: 700,
+      medium: 500,
+      regular: 400,
     },
     fonts: {
       body: '"Zen Maru Gothic", "Quicksand", "Helvetica Neue", "Helvetica", "Hiragino Sans", "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif',
@@ -42,29 +48,19 @@ export const { config, createTheme, css, getCssText, globalCss, styled, theme, k
         '"Quicksand", "Helvetica Neue", "Helvetica", "Hiragino Sans", "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif',
       yugothic: '"Zen Maru Gothic", "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif',
     },
-    fontSizes: {
-      8: '64px',
-      4: '32px',
-      3: '24px',
-      2: '16px',
-      1: '14px',
-    },
-    fontWeights: {
-      bold: 700,
-      medium: 500,
-      regular: 400,
-    },
-    zIndices: {
-      // Header, Footer, etc...
-      LayoutPrimary: 100,
-
-      // Others priority
-      LayoutSecondary: 50,
-    },
+    // 他のテーマの設定
   },
-  utils: {},
   media: {
-    sp: '(max-width: 834px)',
-    tb: '(max-width: 1024px)',
+    bp1: '(min-width: 640px)',
+    bp2: '(min-width: 768px)',
+  },
+});
+
+// グローバルスタイルの設定
+export const globalStyles = globalCss({
+  body: {
+    margin: 0,
+    padding: 0,
+    fontFamily: 'Arial, sans-serif',
   },
 });
