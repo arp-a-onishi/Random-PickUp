@@ -16,10 +16,11 @@ const StyledButton = styled('button', {
   height: '46px',
   maxWidth: '250px',
   padding: '5px 11px',
+  minWidth: '200px',
   width: '10%',
   color: '$secondary',
   background: '$gray3',
-  fontSize: '$2',
+  fontSize: '$3',
   whiteSpace: 'nowrap preserve',
   textDecoration: 'none',
   fontFamily: '$body',
@@ -33,6 +34,7 @@ const StyledButton = styled('button', {
     cursor: 'pointer',
     borderBottom: 'solid 2px #999',
     transform: 'translateY(3px)',
+    transition: '0.3s',
   },
 });
 

@@ -9,9 +9,16 @@ interface InputFieldProps {
 
 // スタイルを定義
 const InputWrapper = styled('div', {
-  maxWidth: '30%',
+  maxWidth: '90%',
   display: 'flex',
   flexDirection: 'column',
+  margin: '10px auto',
+  border: '2px solid $onSurface',
+  borderRadius: '8px',
+  boxShadow: '4px 4px 0 #dae1ee',
+  '&:active': {
+    outline: '4px solid #0066ff46',
+  },
 });
 
 const InputLabel = styled('label', {

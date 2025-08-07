@@ -1,5 +1,4 @@
 import { createStitches } from '@stitches/react';
-import { text } from 'stream/consumers';
 
 export const { styled, css, globalCss, keyframes, getCssText, theme } = createStitches({
   theme: {
@@ -8,20 +7,16 @@ export const { styled, css, globalCss, keyframes, getCssText, theme } = createSt
       secondary: '#737373',
       onSurface: '#171926',
       toggleBtnColor: '#171926',
-      ToggleBtn: '#dfaf3e',
-      TtoggleBtnBg: '#e4e8f0',
-      DefaultBtnColor: '#9a0000',
+      toggleBtn: '#dfaf3e',
+      toggleBtnBg: '#e4e8f0',
+      defaultBtnColor: '#9a0000',
       primaryBtnBg: 'linear-gradient(45deg, #b51409 0%, #efae2d 50%, #46b4ab 100%)',
       secondaryBtnBg: 'linear-gradient(90deg, #efae2d 0%, #d9d9d9 100%)',
-      HintBg: 'linear-gradient(45deg, #b51409 0%, #efae2d 50%, #46b4ab 100%)',
+      hintBg: 'linear-gradient(45deg, #b51409 0%, #efae2d 50%, #46b4ab 100%)',
       textLink: '#9a0000',
+      textOnColor: '#ffffff',
+      background: '#ffffff',
       borderColor: '#dae1ee',
-      border: '2px solid  #dae1ee',
-      boxShadowLg: '4px 4px 0  #dae1ee',
-      boxShadowSm: '2px 2px 0  #dae1ee',
-      boxShadowInset: 'inset 4px 4px 0  #dae1ee',
-      boxShadowInsetSm: 'inset 2px 2px 0  #dae1ee',
-      borderRadiusFull: '625rem',
       sky: '#00a4fd',
       blue: '#0d20fc',
       teal: '#46b4ab',
