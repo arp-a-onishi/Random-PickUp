@@ -34,7 +34,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, onRetry, result }) => {
 
 const modalStyles = {
   overlay: {
-    position: 'fixed' as 'fixed',
+    position: 'fixed',
     top: 0,
     left: 0,
     right: 0,
