@@ -1,7 +1,7 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
-const nextConfig: NextConfig = {
-  /* config options here */
+const config: NextConfig = {
+  output: 'export', // 静的エクスポートを有効にする
 };
 
-export default nextConfig;
+export default config;
