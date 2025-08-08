@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react';
 import Home from '../compornent/Home';
 
 const App: React.FC = () => {
