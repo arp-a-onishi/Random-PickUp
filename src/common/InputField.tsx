@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { styled } from '../../stitches.config';
+
 interface InputFieldProps {
   value: string;
   onChange: (value: string) => void;
@@ -55,7 +56,15 @@ const InputUnderLine = styled('div', {
 });
 
 // InputFieldコンポーネントの実装
-const InputField: React.FC<InputFieldProps> = ({ value, onChange, index }) => {
+const InputField: React.FC<InputFieldProps> = React.memo(function InputField({ value, onChange, index }) {
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (inputRef.current) {
+      inputRef.current.focus(); // フォーカスを設定
+    }
+  }, [value]); // valueが変更されたときにフォーカスを設定
+
   const inputId = `text${index + 1}`;
   const labelId = `l_${inputId}`;
 
@@ -65,15 +74,20 @@ const InputField: React.FC<InputFieldProps> = ({ value, onChange, index }) => {
         {inputId}
       </InputLabel>
       <InputText
+        ref={inputRef} // refを設定
         id={inputId}
         type='text'
         placeholder='コメントを入力する'
         value={value}
-        onChange={(e) => onChange(e.target.value)}
+        onChange={(e) => {
+          // イベントのバブリングを防ぐために、event.preventDefault()を使ってみる
+          e.preventDefault();
+          onChange(e.target.value); // 状態を更新
+        }}
       />
       <InputUnderLine className='underline' />
     </InputWrapper>
   );
-};
+});
 
 export default InputField;
