@@ -5,20 +5,20 @@ import ButtonField from '../compornent/ButtonField';
 import Modal from '../common/Modal';
 import Button from '../common/button';
 
-const Home = () => {
-  const HomeWrapper = styled('div', {
-    width: '60%',
-    minWidth: '428px',
-    margin: '0 auto',
-    color: '$onSurface',
-    textAlign: 'center',
-    background: '$background',
-    border: '2px solid $onSurface',
-    borderRadius: '8px',
-    boxShadow: '4px 4px 0 #dae1ee',
-    animation: 'pop 0.2s ease-in-out 1',
-  });
+const HomeWrapper = styled('div', {
+  width: '60%',
+  minWidth: '428px',
+  margin: '0 auto',
+  color: '$onSurface',
+  textAlign: 'center',
+  background: '$background',
+  border: '2px solid $onSurface',
+  borderRadius: '8px',
+  boxShadow: '4px 4px 0 #dae1ee',
+  animation: 'pop 0.2s ease-in-out 1',
+});
 
+const Home = () => {
   useEffect(() => {}, []);
 
   const [inputs, setInputs] = useState<string[]>(['']); // 初期値として1つの空の入力を設定
