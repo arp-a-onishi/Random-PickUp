@@ -7,13 +7,12 @@ export const { styled, css, globalCss, keyframes, getCssText, theme } = createSt
       secondary: '#737373',
       onSurface: '#171926',
       toggleBtnColor: '#171926',
-      toggleBtn: '#dfaf3e',
-      toggleBtnBg: '#e4e8f0',
+      AddBtn: '#dfaf3e',
+      ResetBtn: '#737373',
       defaultBtnColor: '#9a0000',
       primaryBtnBg: 'linear-gradient(45deg, #b51409 0%, #efae2d 50%, #46b4ab 100%)',
       secondaryBtnBg: 'linear-gradient(90deg, #efae2d 0%, #d9d9d9 100%)',
-      hintBg: 'linear-gradient(45deg, #b51409 0%, #efae2d 50%, #46b4ab 100%)',
-      textLink: '#9a0000',
+      GachaBg: 'linear-gradient(45deg, #b51409 0%, #efae2d 50%, #46b4ab 100%)',
       textOnColor: '#ffffff',
       background: '#ffffff',
       borderColor: '#dae1ee',
@@ -44,10 +43,6 @@ export const { styled, css, globalCss, keyframes, getCssText, theme } = createSt
       yugothic: '"Zen Maru Gothic", "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif',
     },
     // 他のテーマの設定
-  },
-  media: {
-    bp1: '(min-width: 640px)',
-    bp2: '(min-width: 768px)',
   },
 });
 
