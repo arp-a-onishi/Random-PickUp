@@ -7,12 +7,11 @@ interface InputFieldProps {
   index: number;
 }
 
-// スタイルを定義
 const InputWrapper = styled('div', {
   maxWidth: '90%',
   display: 'flex',
   flexDirection: 'column',
-  margin: '10px auto',
+  margin: '16px auto',
   border: '2px solid $onSurface',
   borderRadius: '8px',
   boxShadow: '4px 4px 0 #dae1ee',
@@ -31,6 +30,7 @@ const InputText = styled('input', {
   width: '100%',
   border: 'none',
   outline: 'none',
+  paddingLeft: '8px',
   paddingBottom: '8px',
   boxSizing: 'border-box',
   // フォーカス時のアニメーションを適用
@@ -55,7 +55,6 @@ const InputUnderLine = styled('div', {
   },
 });
 
-// InputFieldコンポーネントの実装
 const InputField: React.FC<InputFieldProps> = React.memo(function InputField({ value, onChange, index }) {
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -65,7 +64,7 @@ const InputField: React.FC<InputFieldProps> = React.memo(function InputField({ v
     }
   }, [value]); // valueが変更されたときにフォーカスを設定
 
-  const inputId = `text${index + 1}`;
+  const inputId = `項目${index + 1}`;
   const labelId = `l_${inputId}`;
 
   return (
@@ -74,15 +73,14 @@ const InputField: React.FC<InputFieldProps> = React.memo(function InputField({ v
         {inputId}
       </InputLabel>
       <InputText
-        ref={inputRef} // refを設定
+        ref={inputRef}
         id={inputId}
         type='text'
-        placeholder='コメントを入力する'
+        placeholder='文字を入力'
         value={value}
         onChange={(e) => {
-          // イベントのバブリングを防ぐために、event.preventDefault()を使ってみる
           e.preventDefault();
-          onChange(e.target.value); // 状態を更新
+          onChange(e.target.value);
         }}
       />
       <InputUnderLine className='underline' />

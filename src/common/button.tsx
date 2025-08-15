@@ -4,6 +4,7 @@ import { styled } from '../../stitches.config';
 interface ButtonProps {
   onClick: () => void;
   label: string;
+  className?: string;
 }
 
 const StyledButton = styled('button', {
@@ -20,13 +21,25 @@ const StyledButton = styled('button', {
   width: '10%',
   color: '$secondary',
   background: '$gray3',
-  fontSize: '$3',
+  fontSize: '$textLG',
   whiteSpace: 'nowrap preserve',
   textDecoration: 'none',
   fontFamily: '$body',
   fontWeight: '$bold',
   borderRadius: '8px',
   borderBottom: 'solid 5px #999',
+  '&.add-input': {
+    background: '$AddBtn',
+    color: '$textOnColor',
+  },
+  '&.reset': {
+    background: '$ResetBtn',
+    color: '$textOnColor',
+  },
+  '&.gacha': {
+    background: '$GachaBg',
+    color: '$textOnColor',
+  },
   '&:active': {
     outline: '4px solid #0066ff46',
   },
@@ -38,8 +51,12 @@ const StyledButton = styled('button', {
   },
 });
 
-const Button: React.FC<ButtonProps> = ({ onClick, label }) => {
-  return <StyledButton onClick={onClick}>{label}</StyledButton>;
+const Button: React.FC<ButtonProps> = ({ onClick, label, className }) => {
+  return (
+    <StyledButton onClick={onClick} className={className}>
+      {label}
+    </StyledButton>
+  );
 };
 
 export default Button;
